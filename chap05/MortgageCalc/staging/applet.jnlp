@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE jnlp SYSTEM "http://java.sun.com/dtd/JNLP-1.5.dtd">
+<jnlp
+    version="0.1"
+    codebase="file:/C:/svn/code.google.com/griffoninaction/chap05/MortgageCalc/staging"
+>
+    <information>
+        <title>MortgageCalc</title>
+        <vendor>MortgageCalc</vendor>
+        <!--<homepage href="http://app.example.com/"/>-->
+        <!--fallback description-->
+        <description>MortgageCalc</description>
+        <description kind="one-line">MortgageCalc</description>
+        <description kind="short">MortgageCalc</description>
+        <description kind="tooltip">MortgageCalc</description>
+        <!-- fallback icon -->
+        <!--<icon href="http://example.com/icon.gif" kind="default" width="" height=""/>-->
+        <!-- icon used for splash screen -->
+        <!--<icon href="http://example.com/icon.gif" kind="splash" width="" height=""/>-->
+        <!-- icon used in menu -->
+        <!--<icon href="http://example.com/icon.gif" kind="shortcut" width="16" height="16"/>-->
+        <!-- icon used on desktop -->
+        <!--<icon href="http://example.com/icon.gif" kind="shortcut" width="32" height="32"/>-->
+<!-- to create shortcuts, uncomment this
+        <shortcut online="true">
+            <desktop/>
+            <menu submenu="MortgageCalc"/>
+        </shortcut>
+-->
+        <offline-allowed/>
+    </information>
+    <security>
+        <all-permissions/>
+        <!--<j2ee-application-client-permissions/>-->
+    </security>
+    <resources>
+        <property name="jnlp.packEnabled" value="true"/>
+        <j2se version="1.5+" />
+        <!-- auto-added jars follow, griffon-rt, app, and groovy -->
+        <jar href='griffon-rt-0.1.0.jar'/>
+        <jar href='groovy-all-1.6.0.jar'/>
+        <jar href='MortgageCalc.jar'/>
+        <!-- Add all extra jars below here, or the app may break -->
+
+    </resources>
+  <applet-desc
+      documentbase="file:/C:/svn/code.google.com/griffoninaction/chap05/MortgageCalc/staging"
+      name="MortgageCalcApplet"
+      main-class="griffon.applet.GriffonApplet"
+      width="320"
+      height="640">
+      <!-- params are ignored when referenced from web page for 6u10 -->
+    <!--<param name="key1" value="value1"/>-->
+    <!--<param name="key2" value="value2"/>-->
+  </applet-desc>
+</jnlp>
