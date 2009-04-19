@@ -2,7 +2,7 @@
 <!DOCTYPE jnlp SYSTEM "http://java.sun.com/dtd/JNLP-1.5.dtd">
 <jnlp
     version="0.1"
-    codebase="file:/C:/svn/code.google.com/griffoninaction/chap05/MortgageCalc/staging"
+    codebase="file:/C:/svn/code.google.com/griffoninaction/chap05/MortgageCalc/staging/"
 >
     <information>
         <title>MortgageCalc</title>
@@ -44,7 +44,7 @@
 
     </resources>
   <applet-desc
-      documentbase="file:/C:/svn/code.google.com/griffoninaction/chap05/MortgageCalc/staging"
+      documentbase="file:/C:/svn/code.google.com/griffoninaction/chap05/MortgageCalc/staging/"
       name="MortgageCalcApplet"
       main-class="griffon.applet.GriffonApplet"
       width="320"
