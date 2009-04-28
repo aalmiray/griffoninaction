@@ -47,11 +47,11 @@
 <classpathentry kind="var" path="GRIFFON_HOME/lib/ant-launcher.jar" />
 
 
-<classpathentry kind="var" path="GRIFFON_HOME/dist/griffon-cli-0.1-RC-2.jar" />
+<classpathentry kind="var" path="GRIFFON_HOME/dist/griffon-cli-0.1.0.jar" />
 
-<classpathentry kind="var" path="GRIFFON_HOME/dist/griffon-resources-0.1-RC-2.jar" />
+<classpathentry kind="var" path="GRIFFON_HOME/dist/griffon-resources-0.1.0.jar" />
 
-<classpathentry kind="var" path="GRIFFON_HOME/dist/griffon-rt-0.1-RC-2.jar" />
+<classpathentry kind="var" path="GRIFFON_HOME/dist/griffon-rt-0.1.0.jar" />
 
 
     <classpathentry kind="output" path="staging/classes"/>

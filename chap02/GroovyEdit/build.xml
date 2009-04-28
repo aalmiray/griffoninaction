@@ -24,6 +24,15 @@
     </target>
 
     <!-- =================================
+          target: run-app
+         ================================= -->
+    <target name="run-app" description="--> Run a Griffon application in standalone mode">
+        <exec executable="${griffon}" failonerror="true">
+            <arg value="run-app"/>
+        </exec>
+    </target>
+
+    <!-- =================================
           target: test
          ================================= -->
     <target name="test" description="--> Run a Griffon applications unit tests">
