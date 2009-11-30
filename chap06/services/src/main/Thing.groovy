@@ -1,0 +1,3 @@
+class Thing {
+    String value
+}
