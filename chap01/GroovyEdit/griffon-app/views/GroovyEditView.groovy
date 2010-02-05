@@ -1,13 +1,13 @@
 actions {
-   action(id: "openAction",
-      name: "Open",
-      mnemonic: "O",
-      accelerator: shortcut("0"),
+   action(id: 'openAction',
+      name: 'Open',
+      mnemonic: 'O',
+      accelerator: shortcut('O'),
       closure: controller.openFile)
-   action(id: "quitAction",
-      name: "Quit",
-      mnemonic: "Q",
-      accelerator: shortcut("Q"),
+   action(id: 'quitAction',
+      name: 'Quit',
+      mnemonic: 'Q',
+      accelerator: shortcut('Q'),
       closure: controller.quit)
 }
 
@@ -18,12 +18,12 @@ fileViewerWindow = application(title:'GroovyEdit', size:[480,320], locationByPla
                imageIcon('/griffon-icon-32x32.png').image,
                imageIcon('/griffon-icon-16x16.png').image] ) {
    menuBar {
-      menu("File") {
-         menuItem(openAction)
+      menu('File') {
+         menuItem openAction
          separator()
-         menuItem(quitAction)
+         menuItem quitAction
       }
    }
    borderLayout()
-   tabbedPane(id: "tabGroup", constraints: CENTER)
+   tabbedPane id: 'tabGroup', constraints: CENTER
 }

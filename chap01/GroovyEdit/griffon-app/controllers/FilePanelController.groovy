@@ -13,7 +13,7 @@ class FilePanelController {
       }
    }
 
-   def saveFile = { evt = null ->
+   def saveFile = {
       doOutside {
          // write text to file, outside the EDT
          model.loadedFile.text = view.editor.text
@@ -22,10 +22,10 @@ class FilePanelController {
       }
    }
 
-   def closeFile = { evt = null ->
+   def closeFile = {
       // remove tab
-      view.tabGroup.remove(view.tab)
+      view.tabGroup.remove view.tab
       // cleanup
-      destroyMVCGroup(model.mvcId)
+      destroyMVCGroup model.mvcId
    }
 }

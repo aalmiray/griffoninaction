@@ -3,7 +3,7 @@ import javax.swing.JFileChooser
 class GroovyEditController {
    def view
 
-   def openFile = { evt = null ->
+   def openFile = {
       def openResult = view.fileChooserWindow.showOpenDialog(view.fileViewerWindow)
       if( JFileChooser.APPROVE_OPTION == openResult ) {
          File file = new File(view.fileChooserWindow.selectedFile.toString())
@@ -14,7 +14,7 @@ class GroovyEditController {
       }
    }
 
-   def quit = { evt = null ->
+   def quit = {
       app.shutdown()
    }
 }
