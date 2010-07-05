@@ -8,7 +8,7 @@ class DictionaryService {
 
     static final Map WORDS = [
         groovy: "An agile and dynamic language for the Java platform.",
-        grails: "A full stack web application development framework",
+        grails: "A full stack web application development framework.",
         griffon: "Grails inspired desktop application development framework."
     ]
 
