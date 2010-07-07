@@ -10,10 +10,8 @@
 //
 
 // check to see if we already have a TracerGriffonAddon
-ConfigSlurper configSlurper1 = new ConfigSlurper()
-def slurpedBuilder1 = configSlurper1.parse(new File("$basedir/griffon-app/conf/Builder.groovy").toURL())
 boolean addonIsSet1
-slurpedBuilder1.each() { prefix, v ->
+builderConfig.each() { prefix, v ->
     v.each { builder, views ->
         addonIsSet1 = addonIsSet1 || 'TracerGriffonAddon' == builder
     }
@@ -21,7 +19,7 @@ slurpedBuilder1.each() { prefix, v ->
 
 if (!addonIsSet1) {
     println 'Adding TracerGriffonAddon to Builder.groovy'
-    new File("$basedir/griffon-app/conf/Builder.groovy").append('''
+    builderConfigFile.append('''
 root.'TracerGriffonAddon'.addon=true
 ''')
 }

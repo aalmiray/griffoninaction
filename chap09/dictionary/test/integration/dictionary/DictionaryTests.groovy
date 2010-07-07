@@ -13,7 +13,7 @@ class DictionaryTests extends FestSwingTestCase {
             textBox('word').enterText('griffon')
             button('search').click()
             textBox('result')
-                .requireText('griffon: Grails inspired desktop application development framework.')
+                .requireText('griffon: Grails inspired desktop application development platform.')
         }
     }
 

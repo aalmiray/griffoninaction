@@ -1,5 +1,5 @@
 application {
-    title='Ping'
+    title = 'Ping'
     startupGroups = ['ping']
 
     // Should Griffon exit when no Griffon created frames are showing?
@@ -11,16 +11,15 @@ application {
 mvcGroups {
     // MVC Group for "pong"
     'pong' {
-        model = 'PongModel'
-        controller = 'PongController'
-        view = 'PongView'
+        model = 'ping.PongModel'
+        controller = 'ping.PongController'
+        view = 'ping.PongView'
     }
 
     // MVC Group for "ping"
     'ping' {
-        model = 'PingModel'
-        controller = 'PingController'
-        view = 'PingView'
+        model = 'ping.PingModel'
+        controller = 'ping.PingController'
+        view = 'ping.PingView'
     }
-
 }

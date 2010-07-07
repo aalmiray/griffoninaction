@@ -24,8 +24,8 @@ class DictionaryServiceSpec extends UnitSpec {
         where:
             word      | definition
             'Groovy'  | 'An agile and dynamic language for the Java platform.'
-            'Grails'  | 'A full stack web application development framework.'
-            'Griffon' | 'Grails inspired desktop application development framework.'
+            'Grails'  | 'A full stack web application development platform.'
+            'Griffon' | 'Grails inspired desktop application development platform.'
             
     }
 }

@@ -1,5 +1,5 @@
 application {
-    title='Services'
+    title = 'Services'
     startupGroups = ['services']
 
     // Should Griffon exit when no Griffon created frames are showing?
@@ -11,11 +11,9 @@ application {
 mvcGroups {
     // MVC Group for "services"
     'services' {
-        model = 'ServicesModel'
-        controller = 'ServicesController'
-        view = 'ServicesView'
+        model = 'services.ServicesModel'
+        controller = 'services.ServicesController'
+        view = 'services.ServicesView'
     }
 
 }
-
-griffon.basic_injection.disable = true

@@ -1,5 +1,5 @@
 application {
-    title='FileViewer'
+    title = 'FileViewer'
     startupGroups = ['FileViewer']
 
     // Should Griffon exit when no Griffon created frames are showing?
@@ -11,9 +11,8 @@ application {
 mvcGroups {
     // MVC Group for "FileViewer"
     'FileViewer' {
-        model = 'FileViewerModel'
-        view = 'FileViewerView'
-        controller = 'FileViewerController'
+        model = 'fileviewer.FileViewerModel'
+        controller = 'fileviewer.FileViewerController'
+        view = 'fileviewer.FileViewerView'
     }
-
 }

@@ -1,5 +1,5 @@
 application {
-    title='Events'
+    title = 'Events'
     startupGroups = ['events']
 
     // Should Griffon exit when no Griffon created frames are showing?
@@ -11,9 +11,9 @@ application {
 mvcGroups {
     // MVC Group for "events"
     'events' {
-        model = 'EventsModel'
-        controller = 'EventsController'
-        view = 'EventsView'
+        model = 'events.EventsModel'
+        controller = 'events.EventsController'
+        view = 'events.EventsView'
     }
 
 }

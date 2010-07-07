@@ -1,21 +1,17 @@
 package dictionary
 
+import static dictionary.DictionaryService.*
 
-
-scenario "Hello Groovy", {
-   given "A prefix string 'Hello '", {
-      prefix = "Hello "
+scenario "DictionaryService can find the word 'Griffon'", {
+   given "an instance of DictionaryService is available", {
+       service = new DictionaryService()
    }
 
-   and "A name is chosen, such as 'Groovy'", {
-      name = "Groovy"
+   when "the word 'Griffon' is used as parameter", {
+       result = service.findDefinition('Griffon')
    }
 
-   when "Both the prefix and name are concatenated into a greeting", {
-      greeting = prefix + name
-   }
-
-   then "The greeting should be equal to 'Hello Groovy'", {
-      greeting.shouldBe "Hello Groovy"
+   then "the definition should be found", {
+      result.shouldBe "Grails inspired desktop application development platform."
    }
 }

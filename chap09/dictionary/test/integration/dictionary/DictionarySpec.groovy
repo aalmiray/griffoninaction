@@ -18,7 +18,7 @@ class DictionarySpec extends FestSpec {
 
         then:
             window.textBox('result')
-                .requireText('griffon: Grails inspired desktop application development framework.')
+                .requireText('griffon: Grails inspired desktop application development platform.')
     }
 
     def "Typing in an unknown word results in an error message"() {

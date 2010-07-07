@@ -1,5 +1,5 @@
 application {
-    title='ThreadingFileViewer'
+    title = 'ThreadingFileViewer'
     startupGroups = ['ThreadingFileViewer']
 
     // Should Griffon exit when no Griffon created frames are showing?
@@ -9,17 +9,14 @@ application {
     //frameClass = 'javax.swing.JFrame'
 }
 mvcGroups {
-    // MVC Group for "ReadingTab"
     'ReadingTab' {
-        model = 'ReadingTabModel'
-        view = 'ReadingTabView'
-        controller = 'ReadingTabController'
+        model = 'threadingfileviewer.ReadingTabModel'
+        controller = 'threadingfileviewer.ReadingTabController'
+        view = 'threadingfileviewer.ReadingTabView'
     }
-
-    // MVC Group for "ThreadingFileViewer"
     'ThreadingFileViewer' {
-        model = 'ThreadingFileViewerModel'
-        view = 'ThreadingFileViewerView'
-        controller = 'ThreadingFileViewerController'
+        model = 'threadingfileviewer.ThreadingFileViewerModel'
+        controller = 'threadingfileviewer.ThreadingFileViewerController'
+        view = 'threadingfileviewer.ThreadingFileViewerView'
     }
 }
