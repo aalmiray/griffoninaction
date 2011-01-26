@@ -12,7 +12,7 @@ mvcGroups {
     // MVC Group for "MortgageCalc"
     'MortgageCalc' {
         model = 'mortgagecalc.MortgageCalcModel'
-        controller = 'mortgagecalc.MortgageCalcController'
         view = 'mortgagecalc.MortgageCalcView'
+        controller = 'mortgagecalc.MortgageCalcController'
     }
 }

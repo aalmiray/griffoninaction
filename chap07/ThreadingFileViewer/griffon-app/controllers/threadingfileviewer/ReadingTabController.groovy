@@ -19,12 +19,10 @@ class ReadingTabController {
    }
 
    def readFileWithThreading = this.&readFile.curry { file ->
-      doOutside {
-         String text = file.text
-         doLater {
-            model.text = text
-            model.enabled = true
-         }
+      String text = file.text
+      doLater {
+         model.text = text
+         model.enabled = true
       }
    }
 

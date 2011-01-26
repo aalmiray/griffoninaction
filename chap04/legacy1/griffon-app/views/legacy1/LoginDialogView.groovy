@@ -16,4 +16,5 @@ noparent {
     // javax.swing.JButton cancelButton declared in LoginDialog
     bean(loginDialog.cancelButton, id:'cancelButton', actionPerformed: controller.loginCancel)
 }
+
 return loginDialog

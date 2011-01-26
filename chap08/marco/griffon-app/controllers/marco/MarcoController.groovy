@@ -18,11 +18,11 @@ class MarcoController {
     }
 
     def marco = { evt = null ->
-        model.output = ""
-        publishEvent "Marco"
+        execSync { model.output = '' }
+        publishEvent 'Marco'
     }
 
     def onPolo = { msg ->
-        execAsync { model.output += msg + "\n" }
+        execAsync { model.output += msg + '\n' }
     }
 }

@@ -1,6 +1,7 @@
 package dictionary
 
 import griffon.util.GriffonNameUtils
+import groovy.lang.Closure
 
 class DictionaryService {
     static String INPUT_ERROR_MESSAGE = "Please enter a valid word"

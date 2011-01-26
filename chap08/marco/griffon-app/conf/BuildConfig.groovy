@@ -133,3 +133,12 @@ griffon {
         footer = "<br/><br/>Made with Griffon (0.9)"
     }
 }
+
+log4j = {
+    appenders {
+        console name: 'stdout', layout: pattern(conversionPattern: '%d [%t] %-5p %c - %m%n')
+    }
+
+    trace  'org.codehaus.griffon'
+}
+

@@ -10,6 +10,6 @@ class Player {
  
     def onMarco = {
         println "Player ($id) got a Marco!"
-        publishEvent "Polo", ["Polo! ($id)"]
+        publishEvent 'Polo', ["Polo! ($id)"]
     }
 }

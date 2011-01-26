@@ -30,12 +30,10 @@ class FileViewerController {
    def readFileWithThreading = { evt = null ->
        def modelTarget = model.technique2
        doWithSelectedFile(modelTarget) { file ->
-           doOutside {
-               String text = file.text
-               doLater {
-                   modelTarget.text = text
-                   modelTarget.enabled = true
-               }
+           String text = file.text
+           doLater {
+               modelTarget.text = text
+               modelTarget.enabled = true
            }
        }
    }
@@ -50,7 +48,7 @@ class FileViewerController {
                    modelTarget.enabled = true
                }
            }
-      }
+       }
    }
 
    def readFileWithUpdates = { evt = null ->

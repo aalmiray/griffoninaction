@@ -7,5 +7,6 @@ root {
         view = '*'
     }
 }
+
 root.'griffon.builder.css.CSSBuilder'.view = '*'
 root.'griffon.builder.css.CSSBuilder'.controller = ['CSS']

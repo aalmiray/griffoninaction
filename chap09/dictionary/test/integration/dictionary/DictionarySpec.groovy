@@ -11,10 +11,8 @@ class DictionarySpec extends FestSpec {
 
     def "Typing in a known word results in the definition being displayed"() {
         when:
-            window.with {
-                textBox('word').enterText('griffon')
-                button('search').click()
-            }
+            window.textBox('word').enterText('griffon')
+            window.button('search').click()
 
         then:
             window.textBox('result')
@@ -23,10 +21,8 @@ class DictionarySpec extends FestSpec {
 
     def "Typing in an unknown word results in an error message"() {
         when:
-            window.with {
-                textBox('word').enterText('spock')
-                button('search').click()
-            }
+            window.textBox('word').enterText('spock')
+            window.button('search').click()
 
         then:
             window.textBox('result')
@@ -34,9 +30,7 @@ class DictionarySpec extends FestSpec {
     }
 
     void onCleanup() {
-        app.models.dictionary.with {
-            word = ""
-            result = ""
-        }
+        app.models.dictionary.word = ""
+        app.models.dictionary.result = ""
     }
 }

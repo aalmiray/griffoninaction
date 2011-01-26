@@ -9,27 +9,21 @@ class DictionaryTests extends FestSwingTestCase {
     }
 
     void testWordIsFound() {
-        window.with {
-            textBox('word').enterText('griffon')
-            button('search').click()
-            textBox('result')
-                .requireText('griffon: Grails inspired desktop application development platform.')
-        }
+        window.textBox('word').enterText('griffon')
+        window.button('search').click()
+        window.textBox('result')
+            .requireText('griffon: Grails inspired desktop application development platform.')
     }
 
     void testWordIsNotFound() {
-        window.with {
-            textBox('word').enterText('spock')
-            button('search').click()
-            textBox('result')
-                .requireText("spock: Word doesn't exist in dictionary")
-        }
+        window.textBox('word').enterText('spock')
+        window.button('search').click()
+        window.textBox('result')
+            .requireText("spock: Word doesn't exist in dictionary")
     }
 
     protected void onTearDown() {
-        app.models.dictionary.with {
-            word = ""
-            result = ""
-        }
+        app.models.dictionary.word = ""
+        app.models.dictionary.result = ""
     }
 }

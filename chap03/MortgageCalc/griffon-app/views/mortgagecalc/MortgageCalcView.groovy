@@ -12,25 +12,25 @@ application(title:'Mortgage Calculator', pack:true, locationByPlatform:true,
     label('Principal:')
     textField(text: bind(target:model, 'principal',
       value:'$200,000',
-      validator: controller.validatePrincipal,
-      converter: controller.convertPrincipal))
+      validator: model.validatePrincipal,
+      converter: model.convertPrincipal))
 
     label('Interest Rate:')
     textField(text: bind(target:model, 'monthlyRate',
       value:'6.5%',
-      validator: controller.validateRate,
-      converter: controller.convertRate))
+      validator: model.validateRate,
+      converter: model.convertRate))
 
     label('Term:')
     textField(text: bind(target:model, 'months',
       value:'30',
-      validator: controller.validateTerm,
-      converter: controller.convertTerm))
+      validator: model.validateTerm,
+      converter: model.convertTerm))
 
     label('Monthly Payment (P&I):')
     textField(editable:false,
       text: bind(source: model, sourceProperty: 'payment',
         sourceEvent: 'propertyChange',
-        converter: controller.convertPayment))
+        converter: model.convertPayment))
   }
 }
