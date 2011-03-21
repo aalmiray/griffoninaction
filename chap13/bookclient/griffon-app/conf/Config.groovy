@@ -13,4 +13,4 @@ log4j = {
            'griffon.app'
 }
 
-griffon.rest.injectInto = ["controller"]
+griffon.rest.injectInto = ["controller", 'service']

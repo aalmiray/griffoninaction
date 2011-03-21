@@ -1,9 +1,7 @@
 import grails.converters.JSON
 
 class BookController {
-    def index = {
-        redirect(action: 'list', params: params)
-    }
+    static defaultAction = 'list'
 
     def list = {
         render(Book.list(params) as JSON)

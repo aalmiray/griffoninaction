@@ -17,7 +17,5 @@ class BootStrap {
         authors[1].addToBooks(books[1]).save()
         authors[2].addToBooks(books[2]).save()
         authors[1].addToBooks(books[3]).save()
-
-        println books[3].author
     }
 } 
