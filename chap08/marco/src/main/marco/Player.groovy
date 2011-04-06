@@ -1,3 +1,5 @@
+package marco
+
 import griffon.util.EventPublisher
 
 @EventPublisher

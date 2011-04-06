@@ -7,7 +7,7 @@ class MarcoController {
     def model
 
     void mvcGroupInit(Map args) {
-        def createAPlayerAndRegisterIt = { id ->
+        def createAPlayerAndRegisterIt = { int id ->
             def player = new Player(id)
             addEventListener(player)
             player.addEventListener(delegate)
