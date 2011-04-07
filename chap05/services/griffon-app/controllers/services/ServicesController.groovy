@@ -6,7 +6,7 @@ class ServicesController {
 
     void mvcGroupInit(Map args) {
         assert simpleService.greet("Griffon") == "Hello Griffon"
-        assert complexService.call("Griffon") == "complex replies: Griffon"
-        println complexService.call()
+        assert complexService.doIt("Griffon") == "complex replies: Griffon"
+        println complexService.doIt()
     }
 }
