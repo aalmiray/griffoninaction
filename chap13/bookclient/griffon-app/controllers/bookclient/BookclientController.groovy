@@ -1,6 +1,6 @@
 package bookclient
 
-class BookstoreclientController {
+class BookclientController {
     def model
     def view
     def bookstoreService
@@ -12,15 +12,15 @@ class BookstoreclientController {
             model.results.clear()
         }
 
-        String where = view.domain.selection.actionCommand
+        String where = view.choice.selection.actionCommand
 
         try {
             List results = []
             switch(where) {
-                case BookstoreclientModel.AUTHORS:
+                case BookclientModel.AUTHORS:
                   results = bookstoreService.searchAuthors(model)
                   break
-                case BookstoreclientModel.BOOKS:
+                case BookclientModel.BOOKS:
                   results = bookstoreService.searchBooks(model)
                   break
             }
