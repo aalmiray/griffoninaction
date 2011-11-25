@@ -139,6 +139,6 @@ log4j = {
         console name: 'stdout', layout: pattern(conversionPattern: '%d [%t] %-5p %c - %m%n')
     }
 
-    trace  'org.codehaus.griffon'
+    error  'org.codehaus.griffon'
 }
 

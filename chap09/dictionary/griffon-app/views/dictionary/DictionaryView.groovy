@@ -1,9 +1,7 @@
 package dictionary
 
 actions {
-    action(id: 'searchAction',
-        name: 'Search',
-        closure: controller.findDefinition,
+    action(searchAction,
         enabled: bind {model.enabled})
 }
 

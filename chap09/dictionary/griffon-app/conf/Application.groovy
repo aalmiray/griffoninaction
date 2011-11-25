@@ -11,9 +11,8 @@ application {
 mvcGroups {
     // MVC Group for "dictionary"
     'dictionary' {
-        model = 'dictionary.DictionaryModel'
+        model      = 'dictionary.DictionaryModel'
+        view       = 'dictionary.DictionaryView'
         controller = 'dictionary.DictionaryController'
-        view = 'dictionary.DictionaryView'
     }
-
 }

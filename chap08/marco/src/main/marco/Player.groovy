@@ -1,6 +1,6 @@
 package marco
 
-import griffon.util.EventPublisher
+import griffon.transform.EventPublisher
 
 @EventPublisher
 class Player {

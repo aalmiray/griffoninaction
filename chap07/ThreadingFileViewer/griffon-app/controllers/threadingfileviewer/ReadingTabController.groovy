@@ -1,4 +1,6 @@
 package threadingfileviewer
+
+import griffon.transform.Threading
 import javax.swing.JFileChooser
 
 class ReadingTabController {
@@ -13,6 +15,7 @@ class ReadingTabController {
       fileChooser = args.fileChooser
    }
 
+   @Threading(Threading.Policy.SKIP)
    def readFileNoThreading = this.&readFile.curry { file ->
       model.text = file.text
       model.enabled = true

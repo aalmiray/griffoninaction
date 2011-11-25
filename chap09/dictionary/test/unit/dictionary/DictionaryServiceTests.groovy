@@ -2,6 +2,7 @@ package dictionary
 
 import griffon.test.*
 import static dictionary.DictionaryService.*
+import static griffon.util.GriffonNameUtils.isBlank
 
 class DictionaryServiceTests extends GriffonUnitTestCase {
     DictionaryService service = new DictionaryService()
@@ -24,6 +25,7 @@ class DictionaryServiceTests extends GriffonUnitTestCase {
     }
 
     static assertValid(String definition) {
+        assert !isBlank(definition)
         assert definition != INPUT_ERROR_MESSAGE 
         assert definition != FIND_ERROR_MESSAGE 
     }

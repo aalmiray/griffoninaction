@@ -12,6 +12,7 @@ scenario "DictionaryService can find the word 'Griffon'", {
    }
 
    then "the definition should be found", {
-      assert result == "Grails inspired desktop application development platform."
+       result.shouldBe "Grails inspired desktop application development platform."
+       // assert result == "Grails inspired desktop application development platform."
    }
 }

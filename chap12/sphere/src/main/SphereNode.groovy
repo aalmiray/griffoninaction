@@ -42,7 +42,7 @@ class SphereNode extends CustomGfxNode {
                          radius: radius) {
             stop(offset: 0.0f, color: specular)
             stop(offset: 0.8f, color: specular.derive(alpha: 0))
-            transforms{ scale(y: 0.5) }
+            // transforms{ scale(y: 0.5) }
           }
           radialGradient(fit: false, radius: height/1.4,
                          fx: radius/2, fy: radius/4){

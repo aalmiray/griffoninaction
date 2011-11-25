@@ -1,5 +1,7 @@
-package fileviewer 
+package fileviewer
+
 import javax.swing.JFileChooser
+import griffon.transform.Threading
 
 class FileViewerController {
    def model
@@ -9,54 +11,53 @@ class FileViewerController {
       app.shutdown()
    }
 
-   private doWithSelectedFile = { Map modelTarget, Closure codeBlock ->
+   private doWithSelectedFile = { Map technique, Closure codeBlock ->
       def openResult = view.fileChooser.showOpenDialog(view.mainWindow)
       if( JFileChooser.APPROVE_OPTION == openResult ) {
           File file = new File(view.fileChooser.selectedFile.toString())
-          modelTarget.text = ""
-          modelTarget.enabled = false
+          technique.text = ""
+          technique.enabled = false
           codeBlock(file)
       }
    }
 
+   @Threading(Threading.Policy.SKIP)
    def readFileNoThreading = { evt = null ->
-       def modelTarget = model.technique1
-       doWithSelectedFile(modelTarget) { file ->
-           modelTarget.text = file.text
-           modelTarget.enabled = true
+       def technique = model.technique1
+       doWithSelectedFile(technique) { file ->
+           technique.text = file.text
+           technique.enabled = true
        }
    }
 
    def readFileWithThreading = { evt = null ->
-       def modelTarget = model.technique2
-       doWithSelectedFile(modelTarget) { file ->
+       def technique = model.technique2
+       doWithSelectedFile(technique) { file ->
            String text = file.text
-           doLater {
-               modelTarget.text = text
-               modelTarget.enabled = true
-           }
+           technique.text = text
+           technique.enabled = true
        }
    }
 
    def readFileWithWorker = { evt = null ->
-       def modelTarget = model.technique3
-       doWithSelectedFile(modelTarget) { file ->
+       def technique = model.technique3
+       doWithSelectedFile(technique) { file ->
            jxwithWorker(start: true) {
                work { file.text }
                onDone {
-                   modelTarget.text = get()
-                   modelTarget.enabled = true
+                   technique.text = get()
+                   technique.enabled = true
                }
            }
        }
    }
 
    def readFileWithUpdates = { evt = null ->
-       def modelTarget = model.technique4
-       doWithSelectedFile(modelTarget) { file ->
+       def technique = model.technique4
+       doWithSelectedFile(technique) { file ->
            jxwithWorker(start: true) {
                onInit {
-                   modelTarget.progress.with {
+                   technique.progress.with {
                        setIndeterminate(false)
                        setStringPainted(true)
                        setString("0 %")
@@ -77,14 +78,14 @@ class FileViewerController {
                    text.toString()
                }
                onUpdate { chunks ->
-                   modelTarget.progress.string = chunks[0]+ " %"
-                   modelTarget.progress.value = chunks[0]
+                   technique.progress.string = chunks[0]+ " %"
+                   technique.progress.value = chunks[0]
                }
                onDone {
-                   modelTarget.text = get()
-                   modelTarget.progress.stringPainted = false
-                   modelTarget.progress.indeterminate = true
-                   modelTarget.enabled = true
+                   technique.text = get()
+                   technique.progress.stringPainted = false
+                   technique.progress.indeterminate = true
+                   technique.enabled = true
                }
            }
        }

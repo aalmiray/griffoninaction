@@ -1,7 +1,6 @@
 package dictionary
 
-import griffon.util.GriffonNameUtils
-import groovy.lang.Closure
+import static griffon.util.GriffonNameUtils.isBlank
 
 class DictionaryService {
     static String INPUT_ERROR_MESSAGE = "Please enter a valid word"
@@ -10,11 +9,12 @@ class DictionaryService {
     static final Map WORDS = [
         groovy: "An agile and dynamic language for the Java platform.",
         grails: "A full stack web application development platform.",
-        griffon: "Grails inspired desktop application development platform."
+        griffon: "Grails inspired desktop application development platform.",
+        devoxx: 'Where all the cool Java kids hang out.'
     ]
 
     String findDefinition(String word) {
-        if(GriffonNameUtils.isBlank(word)) return INPUT_ERROR_MESSAGE
+        if(isBlank(word)) return INPUT_ERROR_MESSAGE
         WORDS[word.toLowerCase()] ?: FIND_ERROR_MESSAGE
     }
 }

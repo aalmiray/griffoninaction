@@ -8,3 +8,7 @@ root {
     }
 }
 root.'MiglayoutGriffonAddon'.addon=true
+
+root.'I18nGriffonAddon'.addon=true
+
+root.'ActionsGriffonAddon'.addon=true

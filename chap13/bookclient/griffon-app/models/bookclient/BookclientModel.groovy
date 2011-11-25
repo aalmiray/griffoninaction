@@ -1,13 +1,13 @@
 package bookclient
 
 import groovy.beans.Bindable
-import griffon.beans.Listener
+import griffon.transform.PropertyListener
 import ca.odell.glazedlists.EventList
 import ca.odell.glazedlists.BasicEventList
 import ca.odell.glazedlists.SortedList
 
 class BookclientModel {
-  @Listener(enabler)
+  @PropertyListener(enabler)
   @Bindable String query
   @Bindable String status = ''
   @Bindable boolean busy

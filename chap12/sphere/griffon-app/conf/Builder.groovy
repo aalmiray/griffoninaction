@@ -7,4 +7,5 @@ root {
         view = '*'
     }
 }
+
 root.'griffon.builder.gfx.GfxBuilder'.view = '*'

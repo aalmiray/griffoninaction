@@ -19,6 +19,7 @@ jx {
     }
 }
 
-root.'JBusyComponentGriffonAddon'.addon=true
 
 root.'MiglayoutGriffonAddon'.addon=true
+
+root.'JbusyComponentGriffonAddon'.addon=true

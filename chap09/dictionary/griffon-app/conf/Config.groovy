@@ -12,5 +12,3 @@ log4j = {
            'griffon.swing',
            'griffon.app'
 }
-
-

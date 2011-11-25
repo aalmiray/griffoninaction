@@ -1,9 +1,9 @@
 package sample
 
 import groovy.beans.Bindable
-import griffon.beans.Listener
+import griffon.transform.PropertyListener
 
-@Listener(enabler)
+@PropertyListener(enabler)
 class SampleModel {
     @Bindable String inputA
     @Bindable String inputB

@@ -1,24 +1,24 @@
 package fileviewer
 import javax.swing.JTabbedPane
 
-def makeTab = { heading, loadTechnique, modelTarget ->
+def makeTab = { heading, loadTechnique, technique ->
   panel {
     borderLayout()
     panel(constraints: NORTH) {
     gridLayout(cols: 1, rows: 2)
       label(heading)
       button("Choose a file...",
-        enabled: bind{ modelTarget.enabled },
+        enabled: bind{ technique.enabled },
         actionPerformed: loadTechnique)
     }
     scrollPane(constraints: CENTER) {
       textArea(id: "editor",
         editable: false,
         lineWrap: true,
-        text: bind{ modelTarget.text },
-        caretPosition: bind(source: modelTarget, sourceProperty: "text", converter: {0}))
+        text: bind{ technique.text },
+        caretPosition: bind(source: technique, sourceProperty: "text", converter: {0}))
     }
-    modelTarget.progress = progressBar(indeterminate: true,
+    technique.progress = progressBar(indeterminate: true,
       minimum:0, maximum: 100,
       constraints: SOUTH)
   }
@@ -51,8 +51,8 @@ mainWindow = application(title:'FileViewer', size: [480,320], locationByPlatform
      [heading: "Threading - progress update", action: "readFileWithUpdates"]].eachWithIndex { entry, index ->
        index += 1
        def loadTechnique = controller."${entry.action}"
-       def modelTarget = model."technique$index"
-       panel(title: "Test #"+index,makeTab(entry.heading, loadTechnique, modelTarget))
+       def technique = model."technique$index"
+       widget(title: "Test #"+index, makeTab(entry.heading, loadTechnique, technique))
     }
   }
 }

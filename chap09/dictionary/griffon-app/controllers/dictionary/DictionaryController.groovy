@@ -4,17 +4,14 @@ class DictionaryController {
     def model
     def dictionaryService
 
-    def findDefinition = {
-        model.enabled = false
+    def search = {
         String word = model.word
-
-        execOutside {
-            try {
-                String definition = dictionaryService.findDefinition(word)
-                execAsync { model.result = "${word}: $definition" }
-            } finally {
-                execAsync { model.enabled = true }
-            }
+        execSync { model.enabled = false }
+        try {
+            String definition = dictionaryService.findDefinition(word)
+            execAsync { model.result = "${word}: $definition" }
+        } finally {
+            execAsync { model.enabled = true }
         }
     }
 }

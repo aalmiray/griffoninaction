@@ -1,5 +1,6 @@
 package form
 
+import griffon.transform.Threading
 import griffon.util.GriffonNameUtils as GNU
 
 class FormController {

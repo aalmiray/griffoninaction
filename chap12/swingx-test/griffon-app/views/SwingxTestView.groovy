@@ -27,7 +27,7 @@ application(title: 'swingx-test', pack: true, locationByPlatform: true,
         jxtaskPane(title: "Task group 1") {
             jxlabel("Action 1")
         }
-        jxtaskPane(title: "Task group 2", expanded: false) {
+        jxtaskPane(title: "Task group 2", collapsed: true) {
             label("Action 2")
         }
     }

@@ -1,10 +1,15 @@
 package events
 
 class EventsController {
-    void mvcGroupInit(Map args) {
+    void mvcGroupInit(Map params) {
         app.addApplicationEventListener([
             ReadyStart: { a ->
-                println "ReadyEnd (via Map event handler)"
+                println "ReadyEnd (via Map closure event handler)"
+            },
+            ReadyEnd: new RunnableWithArgs() {
+                public void run(Object[] args) {
+                    println "ReadyEnd (via Map runnable event handler)"
+                }
             }
         ])
         app.addApplicationEventListener("ReadyEnd") { a ->
