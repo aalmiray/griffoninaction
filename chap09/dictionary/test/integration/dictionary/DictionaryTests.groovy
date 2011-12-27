@@ -25,5 +25,7 @@ class DictionaryTests extends FestSwingTestCase {
     protected void onTearDown() {
         app.models.dictionary.word = ""
         app.models.dictionary.result = ""
+        window.textBox('word').deleteText()
+        window.textBox('result').deleteText()
     }
 }

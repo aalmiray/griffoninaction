@@ -32,5 +32,7 @@ class DictionarySpec extends FestSpec {
     void onCleanup() {
         app.models.dictionary.word = ""
         app.models.dictionary.result = ""
+        window.textBox('word').deleteText()
+        window.textBox('result').deleteText()
     }
 }
