@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE jnlp SYSTEM "http://java.sun.com/dtd/JNLP-1.5.dtd">
 <jnlp
-    version="@griffonAppVersion@"
+    version="0.1"
     codebase="@griffonAppCodebase@"
     href="@jnlpFileName@"
 >
     <information>
-        <title>@griffonAppName@</title>
-        <vendor>@griffonAppName@</vendor>
+        <title>GroovyEdit</title>
+        <vendor>GroovyEdit</vendor>
         <!--<homepage href="http://app.example.com/"/>-->
         <!--fallback description-->
-        <description>@griffonAppName@</description>
-        <description kind="one-line">@griffonAppName@</description>
-        <description kind="short">@griffonAppName@</description>
-        <description kind="tooltip">@griffonAppName@</description>
+        <description>GroovyEdit</description>
+        <description kind="one-line">GroovyEdit</description>
+        <description kind="short">GroovyEdit</description>
+        <description kind="tooltip">GroovyEdit</description>
         <!-- fallback icon -->
         <icon href="griffon-icon-48x48.png" kind="default" width="48" height="48"/>
         <!-- icon used for splash screen -->
@@ -25,7 +25,7 @@
 <!-- to create shortcuts, uncomment this
         <shortcut online="true">
             <desktop/>
-            <menu submenu="@griffonAppName@"/>
+            <menu submenu="GroovyEdit"/>
         </shortcut>
         <offline-allowed/>
 -->

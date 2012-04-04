@@ -9,17 +9,16 @@
 //    ant.mkdir(dir:"${basedir}/griffon-app/jobs")
 //
 
+// Update the following configuration if your addon
+// requires a different prefix or exposes nodes in
+// a different way.
+// Remember to apply the reverse changes in _Uninstall.groovy
+//
 // check to see if we already have a TracerGriffonAddon
-boolean addonIsSet1
-builderConfig.each() { prefix, v ->
-    v.each { builder, views ->
-        addonIsSet1 = addonIsSet1 || 'TracerGriffonAddon' == builder
-    }
-}
-
-if (!addonIsSet1) {
-    println 'Adding TracerGriffonAddon to Builder.groovy'
-    builderConfigFile.append('''
-root.'TracerGriffonAddon'.addon=true
-''')
-}
+// def configText = '''root.'TracerGriffonAddon'.addon=true'''
+// if(!(builderConfigFile.text.contains(configText))) {
+//     println 'Adding TracerGriffonAddon to Builder.groovy'
+//     builderConfigFile.append("""
+// $configText
+// """)
+// }

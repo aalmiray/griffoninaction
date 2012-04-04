@@ -6,8 +6,8 @@ class BookclientController {
     def bookstoreService
 
     def search = {
-        execSync {
-            model.busy = true
+        execInsideUISync {
+            model.enabled = false
             model.status = ''
             model.results.clear()
         }
@@ -24,17 +24,17 @@ class BookclientController {
                   results = bookstoreService.searchBooks(model)
                   break
             }
-            execSync {
+            execInsideUISync {
                 model.status = 
                   "Found ${results.size()} result${results.size() != 1 ? 's': ''}"
                 if(results) model.results.addAll(results)
             }
         } finally {
-            execAsync { model.busy = false }
+            execInsideUIAsync { model.enabled = true }
         }
     }
 
     def onStartupEnd = { app ->
-        execOutside { bookstoreService.populateModel(model) }
+        execOutsideUI { bookstoreService.populateModel(model) }
     }
 }

@@ -10,7 +10,6 @@ class BookclientModel {
   @PropertyListener(enabler)
   @Bindable String query
   @Bindable String status = ''
-  @Bindable boolean busy
   @Bindable boolean enabled = false
 
   static final AUTHORS = 'author'

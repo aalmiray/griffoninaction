@@ -16,7 +16,7 @@ class DictionaryServiceSpec extends UnitSpec {
             service.findDefinition('spock') == DictionaryService.FIND_ERROR_MESSAGE
     }
 
-    @Unroll({"Entering '$word' results in '$definition'"})
+    @Unroll("Entering '#word' results in '#definition'")
     def "Correct input results in a definition being found"() {
         expect:
             definition == service.findDefinition(word)

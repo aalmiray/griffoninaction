@@ -1,7 +1,7 @@
 package dictionary
 
 actions {
-    action(searchAction,
+    action(execInsideUISync,
         enabled: bind {model.enabled})
 }
 
@@ -14,7 +14,7 @@ application(title: 'Dictionary',
     migLayout(layoutConstraints: 'fill')
     label 'Search term:', constraints: 'left'
     textField name: 'word', columns: 20, text: bind('word', target: model), constraints: 'wrap'
-    button searchAction, name: 'search', constraints: 'span 2, right, wrap'
+    button execInsideUISync, name: 'search', constraints: 'span 2, right, wrap'
     scrollPane(constraints: 'span 2') {
         textArea name: 'result', editable: false, lineWrap: true, wrapStyleWord: true,
                  columns: 28, rows: 5, text: bind {model.result}

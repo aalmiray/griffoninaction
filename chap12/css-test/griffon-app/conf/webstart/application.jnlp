@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE jnlp SYSTEM "http://java.sun.com/dtd/JNLP-1.5.dtd">
 <jnlp
-    version="@griffonAppVersion@"
+    version="0.1"
     codebase="@griffonAppCodebase@"
     href="@jnlpFileName@"
 >
@@ -25,7 +25,7 @@
 <!-- to create shortcuts, uncomment this
         <shortcut online="true">
             <desktop/>
-            <menu submenu="@griffonAppName@"/>
+            <menu submenu="Css-test"/>
         </shortcut>
         <offline-allowed/>
 -->

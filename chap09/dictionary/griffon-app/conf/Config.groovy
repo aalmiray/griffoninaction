@@ -12,3 +12,8 @@ log4j = {
            'griffon.swing',
            'griffon.app'
 }
+
+
+i18n.provider = 'i18n-support' 
+i18n.basename = 'messages' 
+i18n.basenames = ['messages'] 

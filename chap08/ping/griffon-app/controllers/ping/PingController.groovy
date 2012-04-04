@@ -11,7 +11,7 @@ class PingController {
 
     def onPing = {
         String text = "Pong! (${++count})" 
-        execAsync { model.output = text }
+        execInsideUIAsync { model.output = text }
     } 
 
     void mvcGroupInit(Map args) {
@@ -19,6 +19,6 @@ class PingController {
     }
 
     def onPong = { pongText ->
-        execAsync { model.pongText = pongText }
+        execInsideUIAsync { model.pongText = pongText }
     }
 }

@@ -100,15 +100,67 @@ signingkey {
     }
 }
 
+griffon {
+    doc {
+        logo = '<a href="http://griffon.codehaus.org" target="_blank"><img alt="The Griffon Framework" src="../img/griffon.png" border="0"/></a>'
+        sponsorLogo = "<br/>"
+        footer = "<br/><br/>Made with Griffon (@griffon.version@)"
+    }
+}
+
+deploy {
+    application {
+        title = 'Bookclient 0.1'
+        vendor = System.properties['user.name']
+        homepage = 'http://localhost/Bookclient'
+        description {
+            complete = 'Bookclient 0.1'
+            oneline  = 'Bookclient 0.1'
+            minimal  = 'Bookclient 0.1'
+            tooltip  = 'Bookclient 0.1'
+        }
+        icon {
+            'default' {
+                name   = 'griffon-icon-64x64.png'
+                width  = '64'
+                height = '64'
+            }
+            splash {
+                name   = 'griffon.png'
+                width  = '391'
+                height = '123'
+            }
+            selected {
+                name   = 'griffon-icon-64x64.png'
+                width  = '64'
+                height = '64'
+            }
+            disabled {
+                name   = 'griffon-icon-64x64.png'
+                width  = '64'
+                height = '64'
+            }
+            rollover {
+                name   = 'griffon-icon-64x64.png'
+                width  = '64'
+                height = '64'
+            }
+            shortcut {
+                name   = 'griffon-icon-64x64.png'
+                width  = '64'
+                height = '64'
+            }
+        }
+    }
+}
+
 griffon.project.dependency.resolution = {
     // inherit Griffon' default dependencies
     inherits("global") {
     }
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     repositories {
-        griffonPlugins()
         griffonHome()
-        griffonCentral()
 
         // uncomment the below to enable remote dependency resolution
         // from public Maven repositories
@@ -120,16 +172,23 @@ griffon.project.dependency.resolution = {
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+        // specify dependencies here under either 'build', 'compile', 'runtime' or 'test' scopes eg.
 
         // runtime 'mysql:mysql-connector-java:5.1.5'
     }
 }
 
-griffon {
-    doc {
-        logo = '<a href="http://griffon.codehaus.org" target="_blank"><img alt="The Griffon Framework" src="../img/griffon.png" border="0"/></a>'
-        sponsorLogo = "<br/>"
-        footer = "<br/><br/>Made with Griffon (0.9)"
+log4j = {
+    // Example of changing the log pattern for the default console
+    // appender:
+    appenders {
+        console name: 'stdout', layout: pattern(conversionPattern: '%d [%t] %-5p %c - %m%n')
     }
+
+    error 'org.codehaus.griffon',
+          'org.springframework',
+          'org.apache.karaf',
+          'groovyx.net'
+    warn  'griffon'
 }
+

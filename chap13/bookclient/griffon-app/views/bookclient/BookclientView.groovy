@@ -21,8 +21,7 @@ application(title: 'Bookclient', size: [480, 300],
                  source: model.authors)
     makeTableTab(title: 'Books', columns: ['Title'],
                  source: model.books)
-    busyComponent(busy: bind{ model.busy }, title: 'Search') {
-      panel {
+      panel(title: 'Search') {
         migLayout(layoutConstraints: 'fill')
         textField(columns: 30, text: bind('query', target: model))
         button('Search', actionPerformed: controller.search,
@@ -41,6 +40,5 @@ application(title: 'Bookclient', size: [480, 300],
           }
         }
       }
-    }
   }
 }

@@ -9,7 +9,7 @@ public class HelloWorld {
     frame.setTitle("Hello World");
     frame.setSize(new Dimension(200, 100));
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.add(new JLabel("Hello World"));
+    frame.getContentPane().add(new JLabel("Hello World"));
     frame.setVisible(true);
   }
 }

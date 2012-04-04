@@ -6,12 +6,12 @@ class DictionaryController {
 
     def search = {
         String word = model.word
-        execSync { model.enabled = false }
+        execInsideUISync { model.enabled = false }
         try {
             String definition = dictionaryService.findDefinition(word)
-            execAsync { model.result = "${word}: $definition" }
+            execInsideUIAsync { model.result = "${word}: $definition" }
         } finally {
-            execAsync { model.enabled = true }
+            execInsideUIAsync { model.enabled = true }
         }
     }
 }

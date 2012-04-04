@@ -24,12 +24,12 @@ class BookstoreService {
       def authors = response.data.collect([]) { author ->
         [name: author.name, lastname: author.lastname, id: author.id]
       }
-      execSync { model.authors.addAll(authors) }
+      execInsideUISync { model.authors.addAll(authors) }
 
       response = get(path: 'book')
       def books = response.data.collect([]) { book ->
         [title: book.title, id: book.id]
       }
-      execSync { model.books.addAll(books) }
+      execInsideUISync { model.books.addAll(books) }
    }}
 }

@@ -5,9 +5,7 @@ log4j = {
         console name: 'stdout', layout: pattern(conversionPattern: '%d [%t] %-5p %c - %m%n')
     }
 
-    error  'org.codehaus.griffon',
-           'org.codehaus.groovy',
-           'org.springframework'
+    error  'org.codehaus.griffon'
 
     info   'griffon.util',
            'griffon.core',
@@ -15,4 +13,3 @@ log4j = {
            'griffon.app'
 }
 
-griffon.basic_injection.disable = true
