@@ -6,10 +6,9 @@ root {
     }
 }
 
+
 jx {
     'groovy.swing.SwingXBuilder' {
-        controller = ['withWorker']
         view = '*'
     }
 }
-

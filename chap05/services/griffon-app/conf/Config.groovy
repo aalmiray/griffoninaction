@@ -13,3 +13,4 @@ log4j = {
            'griffon.app'
 }
 
+griffon.services.basic.disabled = true

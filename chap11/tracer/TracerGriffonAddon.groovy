@@ -1,7 +1,7 @@
 import java.beans.*
 
 class TracerGriffonAddon {
-    def events = [
+    Map events = [
         NewInstance: { klass, type, instance ->
             addPropertyChangeListener(instance) 
             injectActionInterceptor(klass, instance) 
